@@ -1,0 +1,3 @@
+psutil>=5.8.0
+# tkinter is usually included with Python standard library
+# If tkinter is not available, install with: sudo apt-get install python3-tk
