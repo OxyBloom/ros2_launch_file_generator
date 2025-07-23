@@ -11,6 +11,18 @@ A GUI-based tool for automatically generating ROS2 launch files by monitoring ru
 - **Launch File Generation**: Generate proper ROS2 launch files from selected commands
 - **Preview and Save**: Preview generated launch files before saving to disk
 
+## 🎥 Video Demo
+
+[![ROS2 Launch File Generator Demo](https://img.youtube.com/vi/u5tqTKkaqgo/0.jpg)](https://youtu.be/u5tqTKkaqgo)
+
+**[Watch the Demo on YouTube](https://youtu.be/u5tqTKkaqgo)**
+
+See the tool in action! This video demonstrates:
+- Real-time monitoring of ROS2 commands
+- Interactive GUI for selecting commands
+- Launch file generation with proper ROS2 syntax
+- Complete workflow from monitoring to launch file creation
+
 ## Installation
 
 1. Ensure you have Python 3.6+ installed
