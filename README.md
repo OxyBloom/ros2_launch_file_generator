@@ -205,9 +205,18 @@ Supports various ROS2 parameter formats:
 ```
 launch_generator/
 ├── ros2_launch_generator_gui.py    # Main GUI application
-├── command_monitor.py              # Original command monitoring script
+├── launch_gui.sh                   # Launcher script with dependency checks
 ├── requirements.txt                # Python dependencies
-└── README.md                      # This file
+├── README.md                      # This documentation file
+├── LICENSE                        # License file
+├── test/                          # Test files and utilities
+│   ├── command_monitor.py         # Original command monitoring script
+│   ├── test_monitor.py            # Test monitoring functionality
+│   ├── test_selection.py          # Test GUI selection with mock data
+│   ├── test_launch_generation.py  # Test launch file generation
+│   ├── demo.py                    # Demo and setup verification script
+│   └── test_generated_launch.py   # Example generated launch file
+
 ```
 
 ## Troubleshooting
