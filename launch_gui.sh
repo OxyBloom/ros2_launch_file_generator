@@ -3,16 +3,14 @@
 # ROS2 Launch Generator GUI Launcher Script
 
 # Check if tkinter is available
-python3 -c "import tkinter" 2>/dev/null
-if [ $? -ne 0 ]; then
+if ! python3 -c "import tkinter" 2>/dev/null; then
     echo "Error: tkinter is not available."
     echo "Please install it with: sudo apt-get install python3-tk"
     exit 1
 fi
 
 # Check if psutil is available
-python3 -c "import psutil" 2>/dev/null
-if [ $? -ne 0 ]; then
+if ! python3 -c "import psutil" 2>/dev/null; then
     echo "Installing psutil..."
     pip3 install psutil
 fi

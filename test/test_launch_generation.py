@@ -2,6 +2,10 @@
 """
 Test the improved launch file generation with proper ROS2 syntax
 """
+import sys
+import os
+# Add parent directory to path to import the main module
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from ros2_launch_generator_gui import ROS2Command, LaunchFileGenerator
 

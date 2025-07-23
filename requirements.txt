@@ -1,3 +1,8 @@
 psutil>=5.8.0
+
+# Optional code formatting dependencies (recommended for clean generated code)
+black>=22.0.0
+ruff>=0.1.0
+
 # tkinter is usually included with Python standard library
 # If tkinter is not available, install with: sudo apt-get install python3-tk

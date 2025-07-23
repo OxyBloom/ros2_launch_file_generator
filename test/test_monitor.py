@@ -5,6 +5,9 @@ Run this to verify that the monitoring logic works correctly
 """
 
 import sys
+import os
+# Add parent directory to path to import the main module
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import time
 import threading
 from ros2_launch_generator_gui import ROS2CommandMonitor

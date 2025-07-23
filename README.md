@@ -30,7 +30,16 @@ See the tool in action! This video demonstrates:
    ```bash
    pip install -r requirements.txt
    ```
-3. If you encounter tkinter issues on Linux:
+3. For optimal code formatting (recommended):
+   ```bash
+   pip install black ruff
+   ```
+4. For development with automated code quality checks:
+   ```bash
+   pip install pre-commit
+   pre-commit install
+   ```
+5. If you encounter tkinter issues on Linux:
    ```bash
    sudo apt-get install python3-tk
    ```
@@ -63,6 +72,16 @@ python3 test/test_launch_generation.py
 
 This will generate a sample launch file demonstrating the correct syntax for both Node and IncludeLaunchDescription actions.
 
+### Testing Code Formatting
+
+To test the code formatting capabilities with both Black and Ruff:
+
+```bash
+python3 test/test_black_and_ruff.py
+```
+
+This demonstrates the complete formatting pipeline and shows quality metrics.
+
 ### Using the Tool
 
 1. **Start Monitoring**: The tool automatically starts monitoring ROS2 commands when launched
@@ -73,7 +92,7 @@ This will generate a sample launch file demonstrating the correct syntax for bot
    ros2 launch nav2_bringup tb3_simulation.launch.py
    ```
 3. **View Detected Commands**: Commands appear automatically in the GUI table
-4. **Select/Deselect Commands**: 
+4. **Select/Deselect Commands**:
    - **Double-click** any row to toggle selection
    - **Click** a row and press **Enter** or **Space** to toggle
    - Use **Select All** or **Deselect All** buttons
@@ -132,6 +151,8 @@ The tool generates standard ROS2 launch files with proper syntax:
 - ✅ **Package path resolution** - Uses FindPackageShare for robust package finding
 - ✅ **Launch arguments** - Properly passes parameters to included launch files
 - ✅ **Comments with metadata** - Includes source PID and timestamp for traceability
+- ✅ **Professional code formatting** - Automatically formats generated code using Black/Ruff standards
+- ✅ **Clean, readable output** - Generated files are ready for professional robotics codebases
 
 ### Example Generated Launch File
 
@@ -146,10 +167,10 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     """Generated launch file from monitored ROS2 commands"""
-    
+
     # Launch arguments
     declared_arguments = []
-    
+
     # Nodes and processes
     nodes_and_processes = []
 
@@ -212,6 +233,22 @@ Supports various ROS2 parameter formats:
 - Automatically removes entries for terminated processes
 - Maintains process state across GUI updates
 
+### Code Quality and Formatting
+
+The tool automatically formats generated launch files to professional standards:
+
+- **Black + Ruff formatting** - Uses both Black and Ruff when available for comprehensive code quality
+- **Black formatting** - Primary code formatter for PEP 8 compliance and consistent style
+- **Ruff linting** - Additional linting and formatting fixes for code quality
+- **Consistent indentation** - 4-space indentation throughout
+- **Line length management** - Attempts to respect 88-character line length
+- **Clean parameter formatting** - Properly formatted parameter dictionaries
+- **Import organization** - Organized and consistent imports with unused import removal
+- **Trailing commas** - Proper trailing comma usage for better diffs
+- **Fallback formatting** - Enhanced basic formatting applied when tools aren't installed
+
+Generated files are ready for professional robotics codebases and will pass most linting checks.
+
 ## File Structure
 
 ```
@@ -221,11 +258,15 @@ ros2_launch_file_generator/
 ├── requirements.txt                # Python dependencies
 ├── README.md                      # This documentation file
 ├── LICENSE                        # License file
+├── .pre-commit-config.yaml        # Automated code quality checks configuration
+├── PRE_COMMIT_GUIDE.md            # Guide for using pre-commit hooks
 ├── test/                          # Test files and utilities
 │   ├── command_monitor.py         # Original command monitoring script
 │   ├── test_monitor.py            # Test monitoring functionality
 │   ├── test_selection.py          # Test GUI selection with mock data
 │   ├── test_launch_generation.py  # Test launch file generation
+│   ├── test_formatting.py         # Test basic code formatting
+│   ├── test_black_and_ruff.py     # Test comprehensive Black + Ruff formatting
 │   ├── demo.py                    # Demo and setup verification script
 │   └── test_generated_launch.py   # Example generated launch file
 
