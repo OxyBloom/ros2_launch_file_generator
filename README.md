@@ -203,7 +203,7 @@ Supports various ROS2 parameter formats:
 ## File Structure
 
 ```
-launch_generator/
+ros2_launch_generator/
 ├── ros2_launch_generator_gui.py    # Main GUI application
 ├── launch_gui.sh                   # Launcher script with dependency checks
 ├── requirements.txt                # Python dependencies
