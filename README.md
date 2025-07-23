@@ -31,12 +31,12 @@ A GUI-based tool for automatically generating ROS2 launch files by monitoring ru
 python3 ros2_launch_generator_gui.py
 ```
 
-### Testing the Selection Functionality
+### Testing the Command Monitoring
 
-To test the selection functionality without running actual ROS2 commands:
+To test the command monitoring functionality. This should output ROS2 commands which you executed on a seperate terminal:
 
 ```bash
-python3 test_selection.py
+python3 test/command_monitor.py
 ```
 
 This will launch the GUI with sample commands to test the selection interface.
@@ -46,7 +46,7 @@ This will launch the GUI with sample commands to test the selection interface.
 To test the launch file generation with proper ROS2 syntax:
 
 ```bash
-python3 test_launch_generation.py
+python3 test/test_launch_generation.py
 ```
 
 This will generate a sample launch file demonstrating the correct syntax for both Node and IncludeLaunchDescription actions.
@@ -221,6 +221,17 @@ launch_generator/
 ### Debug Mode
 
 You can monitor the console output for debugging information when commands are detected or removed.
+
+## 📝 TODO
+
+- [ ] **Node name detection improvement** - Better extraction of custom node names from command line arguments
+- [ ] **XML launch file support** - Add support for detecting and including .xml launch files
+- [ ] **Launch argument validation** - Validate that detected parameters match the target launch file's declared arguments
+- [ ] **Namespace detection** - Better handling of ROS2 namespaces in monitored commands
+- [ ] **Conditional launch logic** - Generate launch files with conditional node starting
+- [ ] **Parameter file generation** - Generate separate YAML parameter files
+- [ ] **Launch file validation** - Validate generated launch files against ROS2 launch syntax
+- [ ] **Real-time parameter editing** - Allow editing parameters before generating launch files
 
 ## Contributing
 
